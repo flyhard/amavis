@@ -8,9 +8,8 @@ RUN apt-get update &&\
  DEBIAN_FRONTEND=noninteractive apt-get install -y amavisd-new spamassassin clamav-daemon \
                        pyzor razor libencode-detect-perl libdbi-perl libdbd-mysql-perl libzmq3\
                        arj cabextract cpio nomarch pax unzip zip curl wget &&\
-    rm -rf /var/lib/apt/lists/*
-
-RUN freshclam
+    rm -rf /var/lib/apt/lists/*\
+	freshclam
 ADD getConfdLatest.sh /
 RUN /getConfdLatest.sh
 ADD conf /etc/confd
