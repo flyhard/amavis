@@ -2,5 +2,4 @@
 src = "05-node_id.tmpl"
 dest = "/tmp/myconfig.conf"
 keys = [
-    "ATLAS_TOKEN"
 ]
