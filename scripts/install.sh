@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "postfix postfix/main_mailer_type string Internet site" > preseed.txt
-echo "postfix postfix/mailname string mail.abich.com" >> preseed.txt
+echo "postfix postfix/mailname.tmpl string mail.abich.com" >> preseed.txt
 debconf-set-selections preseed.txt
 
 apt-get update
