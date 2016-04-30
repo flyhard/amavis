@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM flyhard/debian-consul
 MAINTAINER Per Abich <per.abich@gmail.com>
 
 ADD scripts/install.sh /tmp/scripts/
@@ -11,7 +11,7 @@ ADD conf /etc/confd
 # Use syslog-ng to get Postfix logs (rsyslog uses upstart which does not seem
 # to run within Docker).
 #RUN apt-get install -q -y syslog-ng
-ADD entrypoint.sh /
+ADD run.sh /
+ADD consul-conf/amavis.json /etc/consul/
 EXPOSE 10024
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["/usr/sbin/amavisd-new", "foreground"]
+CMD ["/run.sh"]

@@ -1,0 +1,18 @@
+{
+  "service": {
+    "name": "amavis",
+    "tags": ["master"],
+    "address": "127.0.0.1",
+    "port": 10024,
+    "enableTagOverride": false,
+    "checks": [
+      {
+        "id": "amavis",
+        "tcp": "localhost:10024",
+        "interval": "10s",
+        "timeout": "1s",
+        "ttl": "30s"
+      }
+    ]
+  }
+}
