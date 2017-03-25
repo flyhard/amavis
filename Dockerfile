@@ -1,4 +1,4 @@
-FROM flyhard/debian-consul
+FROM flyhard/debian-consul:alpine
 MAINTAINER Per Abich <per.abich@gmail.com>
 
 ADD scripts/install.sh /tmp/scripts/
